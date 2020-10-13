@@ -29,7 +29,7 @@ namespace WebApplication1.Controllers
         [Route("name")]
         public string GetName()
         {
-            return context.UserName();
+            return context.GetValue<string>("UserName");
         }
 
         [HttpGet]

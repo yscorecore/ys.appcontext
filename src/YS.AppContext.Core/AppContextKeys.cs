@@ -11,6 +11,9 @@ namespace YS.AppContext
         public const string UserId = nameof(UserId);
         public const string UserName = nameof(UserName);
         public const string UserEmail = nameof(UserEmail);
+        public const string RoleName = nameof(RoleName);
+        public const string RoleId = nameof(RoleId);
+        public const string LogicRoleIds = nameof(LogicRoleIds);
         public const string RequestIp = nameof(RequestIp);
         public const string RequestLanguage = nameof(RequestLanguage);
     }
