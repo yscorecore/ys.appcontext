@@ -14,7 +14,7 @@ namespace YS.AppContext.Values.AspnetCore.Common
         public string ContextKey { get => AppContextKeys.LogicRoleIds; }
         public object GetContextValue(IAppContext context)
         {
-            return _httpContextAccessor.HttpContext?.User?.FindAll("LogicRoleId").Select(p=>p.Value).Distinct().ToList();
+            return _httpContextAccessor.HttpContext?.User?.FindAll("LogicRoleId").Select(p => p.Value).Distinct().ToList();
         }
     }
 }

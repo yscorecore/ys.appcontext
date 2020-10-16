@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using IdentityDemo.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using IdentityDemo.Models;
 using YS.AppContext;
 
 namespace IdentityDemo.Controllers

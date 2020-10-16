@@ -5,7 +5,7 @@ using YS.Knife;
 
 namespace YS.AppContext.Values.AspnetCore.Common
 {
-    public class ServiceRegister :IServiceRegister
+    public class ServiceRegister : IServiceRegister
     {
         public void RegisterServices(IServiceCollection services, IRegisteContext context)
         {
