@@ -8,5 +8,9 @@ namespace YS.AppContext
     {
         object GetValue(string key);
 
+        IDictionary<string, object> GetAll();
+
+        void DirtyValue(string key);
+
     }
 }

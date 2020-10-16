@@ -14,13 +14,26 @@ namespace YS.AppContext
         public DefaultAppContext(IEnumerable<IAppContextValue> appContextValues)
         {
             _ = appContextValues ?? throw new ArgumentNullException(nameof(appContextValues));
-            _appContextValues = appContextValues.Where(p=>!string.IsNullOrEmpty(p?.ContextKey))
+            _appContextValues = appContextValues.Where(p => !string.IsNullOrEmpty(p?.ContextKey))
                 .ToDictionary(p => p.ContextKey);
+        }
+
+        public void DirtyValue(string key)
+        {
+            lock (_cachedValues)
+            {
+                _cachedValues.Remove(key);
+            }
+        }
+
+        public IDictionary<string, object> GetAll()
+        {
+            return _appContextValues.Keys.ToDictionary(p => p, p => GetValue(p));
         }
 
         public object GetValue(string key)
         {
-            lock (this)
+            lock (_cachedValues)
             {
                 if (_cachedValues.TryGetValue(key, out var storedValue))
                 {
@@ -32,7 +45,7 @@ namespace YS.AppContext
                 }
                 throw new ApplicationException($"The key '{key}' not found in current app context.");
             }
-            
+
         }
     }
 }
