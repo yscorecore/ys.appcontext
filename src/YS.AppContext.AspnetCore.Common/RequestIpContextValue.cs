@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace YS.AppContext.AspnetCore.Common
 {
+    [AppContextValue]
     public class RequestIpContextValue : IAppContextValue
     {
         private readonly IHttpContextAccessor _httpContextAccessor;

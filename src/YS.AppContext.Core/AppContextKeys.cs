@@ -16,5 +16,6 @@ namespace YS.AppContext
         public const string LogicRoleIds = nameof(LogicRoleIds);
         public const string RequestIp = nameof(RequestIp);
         public const string RequestLanguage = nameof(RequestLanguage);
+        public const string IsAuthenticated = nameof(IsAuthenticated);
     }
 }
